@@ -33,7 +33,8 @@ app.use(function(req, res, next) {
 
 const dbConnectionString = 'mongodb://localhost/';
 const dbName = 'premier_league';
-mongoose.connect(dbConnectionString + dbName);
+const MONGODB_URI = process.env.MONGODB_URI || dbConnectionString + dbName;
+mongoose.connect(MONGODB_URI);
 const db = mongoose.connection;
 
 //Check Connection

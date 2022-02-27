@@ -28,15 +28,17 @@ router.get('/', function (req, res, next) {
 
     Team.find({}, (err, data) => {
         if (err) {
-            console.log(err);
+            res.send(`${err}`);
         }
+        res.send(`${data}`)
+        // data.forEach((entry) => {
+        //     console.log(entry);
 
-        data.forEach((entry) => {
-            console.log(entry);
-        })
+        // })
+        // console.log(data)
     });
 
-    res.send('Fetched Data');
+    // res.send('Fetched Data', data);
 });
 
 //UPDATE
