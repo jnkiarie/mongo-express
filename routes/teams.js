@@ -9,7 +9,7 @@ const Team = require('../models/team');
 /* GET users listing. */
 
 //CREATE
-router.post('/addteam', function (req, res, next) {
+router.post('/teams', function (req, res, next) {
     //save the object in mongo
     let myTeam = new Team(req.body);
     // const { name, stadium, size } = req.body;
