@@ -2,6 +2,9 @@ var express = require('express');
 const { status } = require('express/lib/response');
 var router = express.Router();
 const Team = require('../models/team');
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //CRUD
 /* GET users listing. */
@@ -22,8 +25,9 @@ router.post('/addteam', function (req, res, next) {
             console.log(err)
         }
         console.log('Success')
+        res.send('Teams Saved to Database');
     });
-    res.send('Teams Page Creating Teams');
+    
 });
 //READ
 router.get('/', function (req, res, next) {
