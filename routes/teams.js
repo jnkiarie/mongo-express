@@ -25,7 +25,7 @@ router.post('/', function (req, res, next) {
             console.log(err)
         }
         console.log('Success')
-        res.send('Teams Saved to Database');
+        res.send(`Teams Saved to Database as: ${myTeam}`);
     });
     
 });
