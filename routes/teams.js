@@ -2,8 +2,9 @@ var express = require('express');
 const { status } = require('express/lib/response');
 var router = express.Router();
 const Team = require('../models/team');
-
-
+var bodyParser = require('body-parser');
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: true }));
 
 //CRUD
 /* GET users listing. */
