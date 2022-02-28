@@ -9,17 +9,19 @@ const Team = require('../models/team');
 //CREATE
 router.post('/', function (req, res, next) {
     //save the object in mongo
-    const { name, stadium, size } = req.body;
-    let newTeam = new Team({
-        name,
-        stadium,
-        size
-    });
+    let myTeam = new Team(req.body);
+    // const { name, stadium, size } = req.body;
+    // let newTeam = new Team({
+    //     name,
+    //     stadium,
+    //     size
+    // });
 
-    newTeam.save((err) => {
+    myTeam.save((err) => {
         if (err) {
             console.log(err)
         }
+        console.log('Success')
     });
     res.send('Teams Page Creating Teams');
 });
